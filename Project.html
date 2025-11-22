@@ -1,2 +1,191 @@
-<iframe src="Alg. Design Project.pdf" width="100%" height="600px" style="border: none;">
-</iframe>
+import java.util.Scanner;
+public class Homework02 {
+//JOSEPH LOPEZ
+	public static void main(String[] args) {
+		
+		Scanner key = new Scanner(System.in);
+		
+		System.out.println("Hello adventurer! This is your first adventure! There is a path forward. Would you like to follow it? \nChoices: Forward");
+		//quick tutorial of how to play the game. It starts when the user inputs "forward"
+		String input = key.nextLine();
+		
+		if(input.equalsIgnoreCase("Forward"))
+		{
+			System.out.println("Good job adventurer! Now there are some options for you. Choose wisely. \nChoices: Forward, Back, Cave, Rapids");
+		}
+		else
+		{
+			System.exit(0);
+		}
+		String input2 = key.nextLine();
+		if(input2.equalsIgnoreCase("Cave"))
+		{
+			System.out.println("You entered the deep dark cave and have now gotten yourself lost! You try to escape, but you can't see a thing. Guess you should've gotten a FLASHLIGHT first! \nTHE END");
+			//1st of 11 potential endings. It tells the user that they need a flashlight to progress through the Cave
+			System.exit(0);
+		}
+		else if (input2.equalsIgnoreCase("Rapids"))
+		{
+			System.out.println("Uh-oh! You have gotten yourself stuck in the Rapids! Luckily another adventurer saves you! He says that you need WATER WALKER SHOES in order to get across. However, you decide to quit adventuring due to the rapids nearly killing you. \nTHE END");
+		//2nd of 11 potential endings. It tells the user that they need special shoes to progress through the Rapids.
+			System.exit(0);
+		}
+		else if(input2.equalsIgnoreCase("Back"))
+		{
+			System.out.println("It seems like you don't want to adventure anymore! I understand. Take Care! \nTHE END");
+			//3rd of 11 potential endings. It states that due to the user going back to the start, they don't want to adventure.
+			System.exit(0);
+		}
+		else if(input2.equalsIgnoreCase("Forward"))
+		{
+			System.out.println("Pressing forward, you notice some intriguing areas ahead! Maybe they will offer you ITEMS! \nChoices: Square, Armory, Forward");
+		String input3 = key.nextLine();
+		if(input3.equalsIgnoreCase("Forward"))
+		{
+			System.out.println("You decide to just keep pressing forward. You walk, and walk, and keep walking. The path seems to be endless! You keep walking and eventually make it to the end, but there's a sign at the end of the path that says, \"You went the wrong way, dummy\" \nTHE END");
+		//4th of 11 potential endings. It let's the user know not to take this path in order to make progress.
+			System.exit(0);
+		}
+		else if(input3.equalsIgnoreCase("Square"))
+		{
+			System.out.println("The Town Square is HUGE! But you're here to continue your adventure. One of the Townspeople give you a FLASHLIGHT. Maybe this will come in handy. There is also an old hut up ahead that you feel might be important later. \nChoices: Hut, Back");
+		String input4 = key.nextLine();
+			if(input4.equalsIgnoreCase("Hut"))
+			{
+				System.out.println("*The old Witch that lives in the Hut approaches you* Hehehehe! \nHello child! You've come seeking money for the armory yeeeees? Answer my simple problem and I'll send you on you way. \nIf I have 8 sets of 16 potions in reserves for an experiment, and I make 8 more sets of 16 potions, how many potions do I have in total?");
+			int Answer = key.nextInt();
+				if(Answer <= 255 || Answer >= 257)
+				{
+					System.out.println("Oh dear! I looks like you got it wrong! I guess YOU will make a nice test subject for my next experiment! HEHEHEHEHE! \nTHE END");
+					//5th of 11 potential endings. You have to get the make question correct in order to make progress.
+					System.exit(0);
+				}
+				else
+				{
+					System.out.println("Hehe! That's correct! Here you go, as promissed! *You recieved 2 stacks of cash for the armory* Also, there is said to be treasure within the dark cave down the path, The chest requires a 3 digit code. Try using your same answer. Just a hunch. Hehe! \nYou head back to the path you were on before entering the Square, It's time to spend your hard earned cash. \nChoices: Armory");
+				key.nextLine();
+					String input5 = key.nextLine();
+					if(input5.equalsIgnoreCase("Armory"))
+					{
+						System.out.println("I see, you've returned! and with TWO STACKS OF CASH!? The old hag must've really taken an interest in your answer! Well, here are some WATER WALKER SHOES and a SWORD. *You hand in your 2 stacks of cash as payment* I wish you good travels adventurer! Take Care \nYou exit the Armory and go back to the path you started on AT THE BEGINNING. Where will you go? \nChoices: Cave, Rapids");
+					String input8 = key.nextLine();
+					if (input8.equalsIgnoreCase("Cave"))
+					{
+						System.out.println("You pull out your flashlight and see 2 potential paths you could take. Which will you chose? \nChoices: Left, Right");
+						String input9 = key.nextLine();
+						if (input9.equalsIgnoreCase("Left"))
+						{
+							System.out.println("You have reached a treasure chest! However, it requires a 3 digit code to unlock. What is the code?");
+							int Code = key.nextInt();
+							if (Code == 256)
+							{
+							System.out.println("*Alternative Ending Unlocked* \nYou're RICH! you guessed the code! You gain the title \"Wealthy Adventurer\" \nTHE END");
+							//6th of 11 potential endings. You win if you get this ending.
+							System.exit(0);
+							}
+							if (Code <= 255 || Code >= 257)
+							{
+							System.out.println("The Lock won't budge. Try again once you know the code. Maybe someone in the Square knows. Retracing your steps back at the very beginning. You hear an important voice calling out, \"Restart the program\" You think about what it could mean \nTHE END\"");
+							System.exit(0);
+							}
+						}
+						else if (input9.equalsIgnoreCase("Right"))
+						{
+							System.out.println("*True Ending Unlocked* \nYou walk down a deep path and find yourself being watched by a Dragon! Thank goodness you came prepared! You fight off the Dragon with your trusty SWORD and emerge victorious! You are praised by the townspeople and have recieved a plentiful bounty for defeating the Dragon. You have earned the title \"Legendary Adventurer\" \nTHE END");
+						//7th of 11 potential endings. You win if you get this ending.
+							System.exit(0);
+						}
+					}
+					else if (input8.equalsIgnoreCase("Rapids"))
+					{
+						System.out.println("*Alternative Ending Unlocked* \nYou slip on your WATER WALKER SHOES and walk on the water over the rapids. You walk a mile down the water and make your way to a beautiful Oasis! You decide that you can take a break from adventuring and relax at the Oasis. \nTHE END ");
+					//8th of 11 potential endings. You win if you get this ending
+						System.exit(0);
+					}
+					else
+					{
+						System.exit(0);
+					}
+					}
+				
+				}
+			}
+			else if(input4.equalsIgnoreCase("Back"))
+			{
+				System.out.println("You head back to the path you were on before entering the Square, where do you want to go? \nChoices: Armory, Forward, Back");
+			
+				String input6 = key.nextLine();
+				
+				if (input6.equalsIgnoreCase("Armory"))
+			{
+					System.out.println("*Broke Ending* \nGreeting adventurer! Welcome to the Armory! It doesn't seem like you have any money on ya! Come back when ya have some! Try the Hut near the Square! Just be careful! \nYour feelings were hurt that you are broke and you run out of the Armory in tears. Retracing your steps back at the very beginning, you hear an important voice calling out, \"Restart the program\" You think about what it could mean \nTHE END");
+					//9th of 11 potential endings. This tells the user that they need money to talk to the merchant at the armory.
+					System.exit(0);
+			}
+				else if (input6.equalsIgnoreCase("Forward"))
+				{
+					System.out.println("You decide to just keep pressing forward. You walk, and walk, and keep walking. The path seems to be endless! You keep walking and eventually make it to the end, but there's a sign at the end of the path that says, \"You went the wrong way, dummy\" \nTHE END");
+					System.exit(0);
+				}
+				else if (input6.equalsIgnoreCase("Back"))
+				{
+					System.out.println("Where will you go? \nChoices: Cave, Rapids");
+					String input7 = key.nextLine();
+					if (input7.equalsIgnoreCase("Rapids"))
+					{
+						System.out.println("Uh-oh! You have gotten yourself stuck in the Rapids! Luckily another adventurer saves you! He says that you need water walker shoes in order to get across. However, you decide to quit adventuring due to the rapids nearly killing you. \nTHE END");
+						System.exit(0);
+					}
+					else if (input7.equalsIgnoreCase("Cave"))
+					{
+						System.out.println("You pull out your flashlight and see 2 potential paths you could take. Which will you chose? \nChoices: Left, Right");
+						String input8 = key.nextLine();
+					
+					if (input8.equalsIgnoreCase("Left"))
+					{
+					System.out.println("You have reached a treasure chest! However, it requires a 3 digit code to unlock. What is the code?");
+					int Code = key.nextInt();
+					if (Code == 256)
+					{
+					System.out.println("*Secret Ending Unlocked* \nYou're RICH! You didn't even know the code, but you guessed it on your first try! You gain the title \"Lucky Adventurer\" \nTHE END");
+					//10th of 11 potential endings. You win if you get this ending.
+					System.exit(0);
+					}
+					if (Code <= 255 || Code >= 257)
+					{
+					System.out.println("The Lock won't budge. Try again once you know the code. Maybe Someone in the Square knows. Retracing your steps back at the very beginning. You hear an important voice calling out, \"Restart the program\" You think about what it could mean \nTHE END\"");
+					}
+						
+					}
+					else if (input8.equalsIgnoreCase("Right"))
+					{
+					System.out.println("You walk down a deep path and find yourself being watched by a Dragon! You have nothing to defend yourself with but your bare hands. You go down in history as \"The adventurer whose not prepared\" Perhaps visit the Armory first. \nTHE END");
+					//11th of 11 potential endings. This  tells the user that they need to visit the armory before they can fight the dragon.
+					System.exit(0);
+					}
+					}
+				}
+			}
+		
+		}
+		else if(input3.equalsIgnoreCase("Armory"))
+		{
+			System.out.println("*Broke Ending* \nGreeting adventurer! Welcome to the Armory! It doesn't seem like you have any money on ya! Come back when ya have some! Try the Hut near the Square! Just be careful! \nYour feelings were hurt that you are broke and you run out of the Armory in tears. Retracing your steps back at the very beginning, you hear an important voice calling out, \"Restart the program\" You think about what it could mean \nTHE END");
+			System.exit(0);
+		}
+		else
+		{
+			System.exit(0);
+		}
+		
+		
+		}
+		else
+		{
+			System.exit(0);
+		}
+		
+		key.close();
+	}
+}
+
